@@ -23,4 +23,5 @@ class Article extends Model
     {
         return $this->hasMany('App\Models\ArticlePhoto', 'article_id');
     }
+    
 }
