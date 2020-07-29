@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -37,13 +37,13 @@ class UserController extends Controller
      */
     public function store(Request $request, $id = 0)
     {
-        if($id === 0):
+        if($id == 0):
             $data = [
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
             ];
-        else: 
+        else:
             $data = [
                 'name' => $request->name,
                 'email' => $request->email,
@@ -63,7 +63,7 @@ class UserController extends Controller
     public function show($id)
     {
         $data['object'] = User::find($id);
-        
+
         return view('users.createOrUpdate')->with($data);
     }
 
@@ -101,10 +101,10 @@ class UserController extends Controller
         $detete = User::where('id', $request->id)->delete();
         if($detete) {
             $request->session()->flash('success', 'Data has been deleted!');
-            return redirect('home');  
+            return redirect('home');
         }else {
             $request->session()->flash('error','Fail to save data, please check again!');
-            return redirect('home'); 
+            return redirect('home');
         }
     }
 }
