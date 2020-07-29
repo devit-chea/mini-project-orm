@@ -9,7 +9,7 @@
      Create User
     </div>
     <div class="card-body">
-     <form action="{{ url('users/store') }}/{{ isset($object) ? $object->id : 0}}" method="POST" enctype='multipart/form-data'>
+     <form action="{{ url('admin/users/store') }}/{{ isset($object) ? $object->id : 0}}" method="POST" enctype='multipart/form-data'>
       {{csrf_field()}}
       <div class="form-group">
        <label for="exampleInputEmail1">Name</label>

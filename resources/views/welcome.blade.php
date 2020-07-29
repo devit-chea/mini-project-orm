@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
         <!-- Styles -->
         <style>
             html, body {
@@ -67,11 +67,24 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custome.css') }}" rel="stylesheet">
+    <style>
+        .logo-bar {
+            widows: 100%;
+            height: 100px;
+            background-color: #fa1939;
+        }
+    </style>
     </head>
     <body>
+        <div class="logo-bar">
+            <div class="container">
+                <img src="https://plugins.krajee.com/assets/prod/img/krajee-logo.png" alt="logo">
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-            <a class="navbar-brand" href="{{url('all/articles')}}">Articles</a>
+            <a class="navbar-brand" href="{{url('all/articles')}}"><i class="fa fa-home"></i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -90,10 +103,6 @@
                     <a class="nav-link" href="{{url('articles/social')}}">Social</a>
                 </li>
               </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
             </div>
             </div>
           </nav>

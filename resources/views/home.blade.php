@@ -37,8 +37,8 @@
                             <td>{{$record->created_at}}</td>
                             <td>{{$record->updated_at}}</td>
                             <td>
-                              <a class="btn btn-danger" href="{{url('/users/delete').'/'.$record->id}}">Delete</a>
-                              <a class="btn btn-dark" href="{{url('/users/show').'/'.$record->id}}">Update</a>
+                              <a class="btn btn-danger" href="{{url('/admin/users/delete').'/'.$record->id}}">Delete</a>
+                              <a class="btn btn-dark" href="{{url('/admin/users/show').'/'.$record->id}}">Update</a>
                             </td>
                           </tr>
                           @endforeach

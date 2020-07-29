@@ -19,4 +19,8 @@ class Article extends Model
     {
         return $this->belongsTo('App\Models\Category', 'category_id');
     }
+    public function articlePhoto()
+    {
+        return $this->hasMany('App\Models\ArticlePhoto', 'article_id');
+    }
 }

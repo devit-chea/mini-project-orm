@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\ArticlePhoto;
 use App\Models\Category;
 use Carbon\Traits\Date;
 use Illuminate\Http\Request;
@@ -51,6 +52,28 @@ class ArticleController extends Controller
         ];
 
         $createOrUpdate = Article::updateOrCreate(['id' => $id], $data);
+        $images = $request->file('files');
+        if ($request->hasFile('files')) :
+                foreach ($images as $item):
+                    $var = date_create();
+                    $time = date_format($var, 'YmdHis');
+                    $imageName = $time . '-' . $item->getClientOriginalName();
+                    //$item->move(base_path() . 'resources/uploads/file/', $imageName);
+                    $destinationPath = public_path('/images/uploads/file/');
+                    $item->move($destinationPath, $imageName);
+                    $arr[] = $imageName;
+                    $image = implode(",", $arr);
+                    ArticlePhoto::insert(
+                        array(
+                            'article_id' => $createOrUpdate->id,
+                            'name' => $image
+                            )
+                    );
+                endforeach;
+        else:
+                $image = '';
+        endif;
+        
 
         return redirect('admin/articles');
     }
@@ -111,7 +134,8 @@ class ArticleController extends Controller
 
     public function allArticles()
     {
-        $data['all_articles'] = Article::get();
+        $data['all_articles'] = Article::with('articlePhoto')->get();
+
         return view('contents.all_articles')->with($data);
     }
 
