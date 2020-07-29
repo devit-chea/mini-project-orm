@@ -37,12 +37,18 @@ class UserController extends Controller
      */
     public function store(Request $request, $id = 0)
     {
-        $data = [
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ];
-
+        if($id === 0):
+            $data = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ];
+        else: 
+            $data = [
+                'name' => $request->name,
+                'email' => $request->email,
+            ];
+        endif;
         $createOrUpdate = User::updateOrCreate(['id' => $id], $data);
 
         return redirect('home');
