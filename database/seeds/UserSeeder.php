@@ -13,11 +13,21 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $user = new User();
-        $user->name = 'Super Admin';
-        $user->email = 'admin@gmail.com';
-        $user->password = bcrypt('admin@123');
-        $user->save();
+        $data = [
+            ['id' => 1, 'name' => 'Super Admin', 'email'=> 'admin@gmail.com', 'password' => bcrypt('admin@123')]
+        ];
 
+        foreach($data as $record) {
+            $create = User::UpdateOrCreate(
+                [
+                    'id' => $record['id']
+                ],
+                [
+                    'name' => $record['name'],
+                    'email' => $record['email'],
+                    'password' => $record['password']
+                ]
+            );
+        }
     }
 }

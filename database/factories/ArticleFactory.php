@@ -5,7 +5,7 @@
 use App\Models\Article;
 use Faker\Generator as Faker;
 
-$factory->define(Article::class, function (Faker $faker) {
+$data = $factory->define(Article::class, function (Faker $faker) {
     $min = 1;
     $max = 4;
     return [
@@ -17,3 +17,4 @@ $factory->define(Article::class, function (Faker $faker) {
         'published_at' => $faker->dateTime($max = 'now', $timezone = null)
     ];
 });
+

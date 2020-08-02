@@ -18,6 +18,7 @@
                   <p class="card-text">{{ $item->content}}</p></div>
                </div>
              </div>
+             <a class="float-right btn btn-info" href="{{url('view/article/detail/'.$item->id)}}">Read More...</a>
            </div>
      </div>
  </div>

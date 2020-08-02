@@ -66,7 +66,7 @@ class ArticleController extends Controller
                     ArticlePhoto::insert(
                         array(
                             'article_id' => $createOrUpdate->id,
-                            'name' => $image
+                            'name' => '/images/uploads/file/'.$image
                             )
                     );
                 endforeach;
@@ -163,5 +163,14 @@ class ArticleController extends Controller
     {
         $data['socials'] = Article::where('category_id', 4)->get();
         return view('contents.social')->with($data);
+    }
+
+    // get article detail
+
+    public function getArticle_detail($id = 0)
+    {
+        $data['get_article_detail'] = Article::where('id', $id)->with('articlePhoto')->first();
+        
+        return view('contents.article_detail')->with($data);
     }
 }

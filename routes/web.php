@@ -53,9 +53,14 @@ Route::prefix('admin')->group(function () {
     // content
 });
 
+
 Route::get('/all/articles', 'ArticleController@allArticles')->name('/');
 Route::get('/articles/entertainment', 'ArticleController@entertainment')->name('articles/entertainment');
 Route::get('/articles/sports', 'ArticleController@sports')->name('articles/sports');
 Route::get('/articles/technology', 'ArticleController@technology')->name('articles/technology');
 Route::get('/articles/social', 'ArticleController@social')->name('articles/social');
+
+// view detail
+
+Route::get('view/article/detail/{id?}', 'ArticleController@getArticle_detail')->name('view/article/detail');
 
