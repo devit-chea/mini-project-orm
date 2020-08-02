@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Users List
-                  <a class="float-right btn btn-primary" role="button" href="{{url('/users/create')}}">Create User</a>
+                  <a class="float-right btn btn-primary" role="button" href="{{url('admin/users/create')}}">Create User</a>
                 </div>
                 <div class="card-body">
                     @if (session('status'))

@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+class MenuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
+        $data['menus'] = Category::get();
 
+        return view('contents.all_articles')->with($data);
     }
 
     /**
@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.createOrUpdate');
+        //
     }
 
     /**
@@ -35,23 +35,9 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id = 0)
+    public function store(Request $request)
     {
-        if($id == 0):
-            $data = [
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-            ];
-        else:
-            $data = [
-                'name' => $request->name,
-                'email' => $request->email,
-            ];
-        endif;
-        $createOrUpdate = User::updateOrCreate(['id' => $id], $data);
-
-        return redirect('home');
+        //
     }
 
     /**
@@ -62,9 +48,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $data['object'] = User::find($id);
-
-        return view('users.createOrUpdate')->with($data);
+        //
     }
 
     /**
@@ -96,15 +80,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $detete = User::where('id', $request->id)->delete();
-        if($detete) {
-            $request->session()->flash('success', 'Data has been deleted!');
-            return redirect('home');
-        }else {
-            $request->session()->flash('error','Fail to save data, please check again!');
-            return redirect('home');
-        }
+        //
     }
 }

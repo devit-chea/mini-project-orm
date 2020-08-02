@@ -84,13 +84,13 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="{{url('articles/entertainment')}}">Entertainment</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                   <a class="nav-link" href="{{url('articles/sports')}}">Sports</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="{{url('articles/technology')}}">Technology</a>
                 </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                     <a class="nav-link" href="{{url('articles/social')}}">Social</a>
                 </li>
               </ul>
@@ -105,9 +105,9 @@
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
+                        {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
-                        @endif
+                        @endif --}}
                     @endauth
                 </div>
             @endif

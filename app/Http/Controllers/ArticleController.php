@@ -66,7 +66,8 @@ class ArticleController extends Controller
                     ArticlePhoto::insert(
                         array(
                             'article_id' => $createOrUpdate->id,
-                            'name' => '/images/uploads/file/'.$image
+                            'name' => '/images/uploads/file/'.$image,
+                            'path' => '/images/uploads/file/'.$image
                             )
                     );
                 endforeach;
@@ -134,34 +135,32 @@ class ArticleController extends Controller
 
     public function allArticles()
     {
-        $data['all_articles'] = Article::with('articlePhoto')->get();
-
+        $data['all_articles'] = Article::with('articlePhotoFisrt')->orderBy('id', 'desc')->paginate(10);
+        
         return view('contents.all_articles')->with($data);
     }
 
     public function entertainment()
     {
-        $data['entertainments'] = Article::where('category_id', 1)->get();
+        $data['entertainments'] = Article::where('category_id', 1)->orderBy('id', 'desc')->with('articlePhotoFisrt')->paginate(10);
         return view('contents.entertainment')->with($data);
     }
 
     public function sports()
     {
-        $data['sports'] = Article::where('category_id', 2)->get();
+        $data['sports'] = Article::where('category_id', 2)->orderBy('id', 'desc')->with('articlePhotoFisrt')->paginate(10);
         return view('contents.sport')->with($data);
     }
 
-
     public function technology()
     {
-        $data['technologies'] = Article::where('category_id', 3)->get();
+        $data['technologies'] = Article::where('category_id', 3)->orderBy('id', 'desc')->with('articlePhotoFisrt')->paginate(10);
         return view('contents.technology')->with($data);
     }
 
-
     public function social()
     {
-        $data['socials'] = Article::where('category_id', 4)->get();
+        $data['socials'] = Article::where('category_id', 4)->orderBy('id', 'desc')->with('articlePhotoFisrt')->paginate(10);
         return view('contents.social')->with($data);
     }
 
