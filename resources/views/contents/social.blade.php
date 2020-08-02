@@ -10,12 +10,24 @@
                <h3>{{ $item->title}}</h3>
              </div>
              <div class="card-body">
-               <h5 class="card-title">{{ $item->title .'/'. $item->published_at}}</h5>
-               <p class="card-text">{{ $item->content}}</p>
+               <div class="row">
+                 <div class="col-md-6">
+                    <img src="{{asset($item->articlePhotoFisrt[0]->path)}}" class="img-fluid image-resolution" alt="Responsive image">
+                   </div>
+                 <div class="col-md-6">
+                   <h5 class="card-title">{{ $item->title .'/'. $item->published_at}}</h5>
+                   <p class="card-text">{{ $item->description}}</p>
+                 </div>
+               </div>
              </div>
+             <a class="float-right btn btn-info" href="{{url('view/article/detail/'.$item->id)}}">Read More...</a>
            </div>
-     </div>
- </div>
- @endforeach
+        </div>
+    </div>
+  @endforeach
+<br>
+<div class="text-center">
+ <span class="">{{ $socials->links() }}</span>
+</div>
 </div>
 @endsection

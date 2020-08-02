@@ -12,10 +12,10 @@
              <div class="card-body">
                <div class="row">
                  <div class="col-md-5">
-                  <img src="https://media.gettyimages.com/photos/angkor-wat-picture-id546436533?s=612x612" class="img-fluid image-resolution" alt="Responsive image">
+                  <img src="{{asset($item->articlePhotoFisrt[0]->path)}}" class="img-fluid image-resolution" alt="Responsive image">
                  </div>
                  <div class="col-md-7"><h5 class="card-title">{{ $item->title .'/'. $item->published_at}}</h5>
-                  <p class="card-text">{{ $item->content}}</p></div>
+                  <p class="card-text">{{ $item->description}}</p></div>
                </div>
              </div>
              <a class="float-right btn btn-info" href="{{url('view/article/detail/'.$item->id)}}">Read More...</a>
@@ -23,5 +23,9 @@
      </div>
  </div>
  @endforeach
+ <br>
+ <div class="text-center">
+  <span class="">{{ $all_articles->links() }}</span>
+ </div>
 </div>
 @endsection

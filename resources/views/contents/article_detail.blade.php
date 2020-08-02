@@ -11,12 +11,11 @@
       <div class="carousel-item active">
         <img src="{{asset('images/uploads/file/image-default.png')}}" style="height: 500px;" class="d-block w-100" alt="...">
       </div>
+      @foreach ($get_article_detail->articlePhoto as $item2)
       <div class="carousel-item">
-        <img src="{{asset('images/uploads/file/image-default.png')}}" style="height: 500px;" class="d-block w-100" alt="...">
+        <img src="{{asset($item2->path)}}" style="height: 500px;" class="d-block w-100" alt="...">
       </div>
-      <div class="carousel-item">
-        <img src="{{asset('images/uploads/file/image-default.png')}}" style="height: 500px;" class="d-block w-100" alt="...">
-      </div>
+      @endforeach
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
