@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead class="thead-dark">
                           <tr>
                             <th scope="col">#</th>
@@ -43,6 +43,10 @@
                           @endforeach
                         </tbody>
                       </table>
+                      <br>
+                    <div class="text-center">
+                    <span class="">{{ $articles->links() }}</span>
+                    </div>
                 </div>
             </div>
         </div>

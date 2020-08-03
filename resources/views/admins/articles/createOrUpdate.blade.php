@@ -37,7 +37,7 @@
       </div>
       <div class="form-group" style="padding-bottom: 15px">                            
         <label class="col-lg-3">Upload</label>
-        <input class="btn btn-primary"  type="file" name="files[]" multiple > <br/>
+        <input class="btn btn-primary"  type="file" name="files[]" > <br/>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
       <a class="btn btn-danger" role="button" href="{{url('admin/articles')}}">Back</a>

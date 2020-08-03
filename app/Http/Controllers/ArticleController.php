@@ -17,7 +17,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $data['articles'] = Article::with('categories')->get();
+        $data['articles'] = Article::with('categories')->orderBy('id', 'desc')->paginate(10);
         
         return view('admins.articles.index')->with($data);
     }
@@ -68,7 +68,7 @@ class ArticleController extends Controller
                             'article_id' => $createOrUpdate->id,
                             'name' => '/images/uploads/file/'.$image,
                             'path' => '/images/uploads/file/'.$image
-                            )
+                              )
                     );
                 endforeach;
         else:
