@@ -11,7 +11,7 @@ $data = $factory->define(Article::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'description' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
-        'content' => $faker->text($maxNbChars = 200),
+        'content' => $faker->text($maxNbChars = 1000),
         'slug' => $faker->slug(),
         'category_id' => rand($min, $max),
         'published_at' => $faker->dateTime($max = 'now', $timezone = null)

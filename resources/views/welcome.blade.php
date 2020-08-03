@@ -48,6 +48,17 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .img-logo-post {
+                width: 30%;
+            }
+            .logo-bar {
+                widows: 100%;
+                height: 100px;
+                background-color: #fff;
+            }
+            .nav-link {
+                font-size: 18px;
+            }
         </style>
         <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -59,18 +70,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custome.css') }}" rel="stylesheet">
-    <style>
-        .logo-bar {
-            widows: 100%;
-            height: 100px;
-            background-color: #fa1939;
-        }
-    </style>
     </head>
     <body>
         <div class="logo-bar">
             <div class="container">
-                <img src="https://plugins.krajee.com/assets/prod/img/krajee-logo.png" alt="logo">
+                <img class="img-logo-post" src="https://guestposts.io/wp-content/uploads/2018/12/logo-guestposts.sio_.png" alt="logo">
             </div>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -82,16 +86,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="{{url('articles/entertainment')}}">Entertainment</a>
+                  <a class="nav-link" href="{{url('articles/entertainment')}}">Entertainments</a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="{{url('articles/sports')}}">Sports</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{url('articles/technology')}}">Technology</a>
+                    <a class="nav-link" href="{{url('articles/technology')}}">Technologies</a>
                 </li>
                     <li class="nav-item active">
-                    <a class="nav-link" href="{{url('articles/social')}}">Social</a>
+                    <a class="nav-link" href="{{url('articles/social')}}">Socials</a>
                 </li>
               </ul>
             </div>
@@ -103,7 +107,7 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        {{-- <a href="{{ route('login') }}">Login</a> --}}
 
                         {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>

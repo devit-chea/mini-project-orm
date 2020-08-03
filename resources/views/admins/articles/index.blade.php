@@ -7,13 +7,13 @@
                 <div class="card-header">Articles List
                   <a class="float-right btn btn-primary" role="button" href="{{url('admin/articles/create')}}">Create Article</a>
                 </div>
-                <div class="card-body">
+                <div class="card-body table-responsive">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-                    <table class="table table-responsive">
+                    <table class="table">
                         <thead class="thead-dark">
                           <tr>
                             <th scope="col">#</th>

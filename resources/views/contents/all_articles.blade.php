@@ -2,25 +2,36 @@
 
 @section('content1')
 <div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-8">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                  </li>
+            </ul>
+        </div>
+    </div>
  @foreach ($all_articles as $item)
- <div class="row">
-     <div class="col-md-10">
+ <div class="row justify-content-md-center">
+    <div class="col-md-8">
+        <a style="text-decoration:none" href="{{url('view/article/detail/'.$item->id)}}">
          <div class="card">
-             <div class="card-header">
-               <h3>{{ $item->title}}</h3>
-             </div>
              <div class="card-body">
                <div class="row">
-                 <div class="col-md-5">
+                <div class="col-md-5">
                   <img src="{{asset($item->articlePhotoFisrt[0]->path)}}" class="img-fluid image-resolution" alt="Responsive image">
-                 </div>
-                 <div class="col-md-7"><h5 class="card-title">{{ $item->title .'/'. $item->published_at}}</h5>
-                  <p class="card-text">{{ $item->description}}</p></div>
+                </div>
+                <div class="col-md-7">
+                    <h3 class="card-title">{{ $item->title}}</h3>
+                    <hr>
+                    <h5>{{$item->published_at}}</h5>
+                    <p class="card-text">{{ $item->description}}</p>
+                </div>
                </div>
              </div>
-             <a class="float-right btn btn-info" href="{{url('view/article/detail/'.$item->id)}}">Read More...</a>
            </div>
-     </div>
+        </a>
+    </div>
  </div>
  @endforeach
  <br>
