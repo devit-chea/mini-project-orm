@@ -9,7 +9,7 @@ $data = $factory->define(Article::class, function (Faker $faker) {
     $min = 1;
     $max = 4;
     return [
-        'title' => $faker->title() . $faker->firstName(),
+        'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'description' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         'content' => $faker->text($maxNbChars = 200),
         'slug' => $faker->slug(),
