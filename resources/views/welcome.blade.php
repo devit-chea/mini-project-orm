@@ -49,7 +49,7 @@
                 margin-bottom: 30px;
             }
             .img-logo-post {
-                width: 30%;
+                width: 40%;
             }
             .logo-bar {
                 widows: 100%;
@@ -74,7 +74,7 @@
     <body>
         <div class="logo-bar">
             <div class="container">
-                <img class="img-logo-post" src="https://guestposts.io/wp-content/uploads/2018/12/logo-guestposts.sio_.png" alt="logo">
+                <img class="img-logo-post" src="{{asset('images/guestpost.png')}}" alt="logo">
             </div>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
