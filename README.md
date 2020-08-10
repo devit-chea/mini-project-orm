@@ -1,4 +1,4 @@
-# ![Article Post]
+# Article Post
 
 The project is the Article Post, it provides the news and articles within Entertainment, Sports, Technologies and Socials news.
 
