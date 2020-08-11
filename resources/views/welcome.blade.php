@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
+        <title>Article Post</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
@@ -49,7 +49,7 @@
                 margin-bottom: 30px;
             }
             .img-logo-post {
-                width: 40%;
+                width: 30%;
             }
             .logo-bar {
                 widows: 100%;
@@ -104,15 +104,15 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    @auth
+                    {{-- @auth
                         <a href="{{ url('/home') }}">Home</a>
-                    @else
+                    @else --}}
                         {{-- <a href="{{ route('login') }}">Login</a> --}}
 
                         {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif --}}
-                    @endauth
+                    {{-- @endauth --}}
                 </div>
             @endif
         </div>

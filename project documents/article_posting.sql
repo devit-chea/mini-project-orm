@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : Wamp64
 Source Server Version : 50505
 Source Host           : localhost:3306
-Source Database       : orm-webservice
+Source Database       : article_posting
 
 Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2020-08-04 13:56:09
+Date: 2020-08-11 23:16:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
